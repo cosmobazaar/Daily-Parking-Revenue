@@ -140,7 +140,7 @@ input[type="file"]{display:none;}
   <div id="topbar">
     <div class="filter-group"><span class="filter-icon">📅</span><div><div class="filter-label">เดือน</div><div class="filter-value">พฤษภาคม 2026</div></div></div>
     <div class="filter-group"><span class="filter-icon">📆</span><div><div class="filter-label">วันที่</div><div class="filter-value" id="date-range">1/5/2026 - 28/5/2026</div></div></div>
-    <div class="filter-group"><span class="filter-icon">🏪</span><div><div class="filter-label">Outlet</div><div class="filter-value">All</div></div></div>
+    <div class="filter-group"><span class="filter-icon">🏪</span><div><div class="filter-label">พื้นที่ลานจอด</div><div class="filter-value">All</div></div></div>
     <div class="filter-group"><span class="filter-icon">💰</span><div><div class="filter-label">ประเภท</div><div class="filter-value">All</div></div></div>
     <input type="file" id="file-input" accept=".xlsx,.xls" onchange="handleFile(event)">
     <button class="upload-btn" onclick="document.getElementById('file-input').click()">⬆ อัปเดตข้อมูล</button>
@@ -524,7 +524,7 @@ function buildSummary(s){
   document.getElementById('summary-box').innerHTML=`
     <div class="summary-item"><span class="sum-icon">📊</span><div class="sum-text">ยอดรวมทั้งเดือน <b>${fmt(s.total)} บาท</b><br>รวม ${DATA.daily.length} วัน</div></div>
     <div class="summary-item"><span class="sum-icon">💵</span><div class="sum-text">เงินสด <b>${s.cashPct.toFixed(2)}%</b> ของยอดรวม<br>QR <b>${s.qrPct.toFixed(2)}%</b></div></div>
-    <div class="summary-item"><span class="sum-icon">🏆</span><div class="sum-text">Outlet สูงสุด: <b>${topLb}</b><br>${(s.topEntry[1]/s.total*100).toFixed(1)}% ของยอดรวม</div></div>
+    <div class="summary-item"><span class="sum-icon">🏆</span><div class="sum-text">พื้นที่ลานจอด สูงสุด: <b>${topLb}</b><br>${(s.topEntry[1]/s.total*100).toFixed(1)}% ของยอดรวม</div></div>
     <div class="summary-item"><span class="sum-icon">⭐</span><div class="sum-text">วันสูงสุด: <b>${fmtD(s.topDay.date)}</b><br>${fmt(s.topDay.total)} บาท</div></div>`;
 }
 
