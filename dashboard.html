@@ -11,7 +11,6 @@
 :root{--bg:#0f1923;--sidebar:#0a1018;--card:#162030;--card2:#1a2840;--border:#243550;--accent1:#1d8cf8;--accent2:#00d6b4;--accent3:#f5a623;--accent4:#e63946;--text:#e8f0fe;--muted:#7a9bc0;--green:#34d399;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);display:flex;height:100vh;overflow:hidden;}
-/* SIDEBAR */
 #sidebar{width:200px;min-width:200px;background:var(--sidebar);display:flex;flex-direction:column;border-right:1px solid var(--border);z-index:10;}
 .sb-header{padding:16px;border-bottom:1px solid var(--border);}
 .sb-title{font-family:'Prompt',sans-serif;font-size:13px;font-weight:700;color:var(--accent1);letter-spacing:.5px;}
@@ -21,7 +20,6 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
 .nav-item.active{background:rgba(29,140,248,.15);color:var(--accent1);border-left-color:var(--accent1);font-weight:600;}
 .nav-icon{font-size:15px;width:20px;text-align:center;}
 .sb-footer{margin-top:auto;padding:12px 16px;border-top:1px solid var(--border);font-size:10px;color:var(--muted);}
-/* MAIN */
 #main{flex:1;display:flex;flex-direction:column;overflow:hidden;}
 #topbar{background:var(--sidebar);border-bottom:1px solid var(--border);padding:9px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
 .fg{display:flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:5px 11px;font-size:12px;white-space:nowrap;}
@@ -29,11 +27,10 @@ body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);dis
 .btn{display:flex;align-items:center;gap:7px;border:none;border-radius:8px;padding:7px 13px;font-size:12px;font-family:'Sarabun',sans-serif;cursor:pointer;font-weight:600;transition:all .2s;}
 .btn-primary{background:var(--accent1);color:#fff;}.btn-primary:hover{background:#1a7de0;}
 .btn-outline{background:var(--card);color:var(--muted);border:1px solid var(--border);margin-left:auto;}.btn-outline:hover{color:var(--text);}
+.btn-danger{background:rgba(230,57,70,.15);color:var(--accent4);border:1px solid rgba(230,57,70,.3);}.btn-danger:hover{background:rgba(230,57,70,.25);}
 input[type="file"]{display:none;}
-/* PAGES */
 .page{display:none;flex:1;overflow-y:auto;padding:12px 16px;flex-direction:column;gap:10px;}
 .page.active{display:flex;}
-/* CARDS */
 .kpi-row{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;}
 .kc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:3px;position:relative;overflow:hidden;}
 .kc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
@@ -48,7 +45,6 @@ input[type="file"]{display:none;}
 .kc-badge{font-size:10px;color:var(--green);font-weight:600;}
 .kc-bar{height:3px;background:var(--border);border-radius:2px;margin-top:3px;overflow:hidden;}
 .kc-fill{height:100%;border-radius:2px;}
-/* CHART GRIDS */
 .r3{display:grid;grid-template-columns:2fr 1.3fr 1fr;gap:10px;}
 .r3b{display:grid;grid-template-columns:1fr 1.2fr .9fr;gap:10px;}
 .r3c{display:grid;grid-template-columns:2.6fr 1fr 1fr;gap:10px;}
@@ -60,7 +56,6 @@ input[type="file"]{display:none;}
 .legend{display:flex;gap:10px;flex-wrap:wrap;}
 .leg-item{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--muted);}
 .leg-dot{width:8px;height:8px;border-radius:2px;}
-/* TABLE */
 .tw{overflow-x:auto;overflow-y:auto;max-height:220px;}
 table{width:100%;border-collapse:collapse;font-size:11px;}
 th{background:var(--card2);color:var(--muted);font-weight:600;padding:6px 7px;text-align:right;white-space:nowrap;position:sticky;top:0;z-index:1;border-bottom:1px solid var(--border);}
@@ -69,7 +64,6 @@ td{padding:5px 7px;text-align:right;border-bottom:1px solid rgba(36,53,80,.5);wh
 td:first-child{text-align:center;color:var(--muted);}
 tr:last-child td{font-weight:700;background:rgba(29,140,248,.08);color:var(--accent1);position:sticky;bottom:0;}
 tr:hover:not(:last-child) td{background:rgba(255,255,255,.03);}
-/* CASHQR PANEL */
 .cq-panel{display:flex;flex-direction:column;gap:7px;height:100%;justify-content:center;}
 .cq-box{background:var(--card2);border-radius:8px;padding:10px 13px;}
 .cq-box.cash{border-left:3px solid var(--accent1);}.cq-box.qr{border-left:3px solid var(--green);}
@@ -78,39 +72,32 @@ tr:hover:not(:last-child) td{background:rgba(255,255,255,.03);}
 .cq-val.cash{color:var(--accent1);}.cq-val.qr{color:var(--green);}
 .cq-bar{height:4px;background:var(--border);border-radius:3px;margin-top:5px;overflow:hidden;}
 .cq-fill{height:100%;border-radius:3px;}
-/* TOP5 */
 .t5-table{font-size:11px;width:100%;}
 .t5-table th{font-size:10px;padding:5px 5px;color:var(--muted);text-align:center;background:none;position:static;border-bottom:1px solid var(--border);}
 .t5-table td{padding:6px 5px;text-align:center;border-bottom:1px solid rgba(36,53,80,.4);}
 .rank{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;background:var(--accent1);color:#fff;border-radius:5px;font-size:11px;font-weight:700;flex-shrink:0;}
 .rank.r1{background:#f5a623;}.rank.r2{background:#9ca3af;}.rank.r3{background:#cd7f32;}
-/* SUMMARY BOX */
 .sum-box{display:flex;flex-direction:column;gap:6px;}
 .sum-item{display:flex;align-items:flex-start;gap:8px;padding:7px 9px;background:var(--card2);border-radius:8px;font-size:11px;line-height:1.5;}
 .sum-item b{color:var(--text);}
-/* PAGE TITLES */
 .page-header{padding:4px 0 8px;border-bottom:1px solid var(--border);margin-bottom:4px;}
 .page-title{font-family:'Prompt',sans-serif;font-size:16px;font-weight:700;color:var(--text);}
 .page-sub{font-size:11px;color:var(--muted);margin-top:2px;}
-/* COMPARE PAGE */
 .outlet-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
 .outlet-kc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:4px;}
 .outlet-kc-name{font-size:11px;color:var(--muted);font-weight:600;}
 .outlet-kc-val{font-family:'Prompt',sans-serif;font-size:16px;font-weight:700;}
 .outlet-kc-bar{height:4px;background:var(--border);border-radius:2px;overflow:hidden;margin-top:3px;}
 .outlet-kc-fill{height:100%;border-radius:2px;}
-/* DAILY PAGE */
 .day-filter{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
 .day-filter label{font-size:11px;color:var(--muted);}
 .day-filter input[type=range]{accent-color:var(--accent1);width:160px;}
 .day-filter span{font-size:12px;font-weight:600;color:var(--accent1);}
-/* CASHQR PAGE */
 .big-cashqr{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .bcq-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 22px;display:flex;flex-direction:column;gap:6px;}
 .bcq-label{font-size:12px;color:var(--muted);font-weight:600;}
 .bcq-val{font-family:'Prompt',sans-serif;font-size:36px;font-weight:800;}
 .bcq-val.cash{color:var(--accent1);}.bcq-val.qr{color:var(--green);}
-/* REPORT PAGE */
 .report-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .rep-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;}
 .rep-title{font-size:12px;font-weight:700;margin-bottom:10px;color:var(--accent1);}
@@ -118,10 +105,16 @@ tr:hover:not(:last-child) td{background:rgba(255,255,255,.03);}
 .rep-row:last-child{border:none;}
 .rep-key{color:var(--muted);}
 .rep-val{font-weight:600;}
-/* SCROLLBAR */
 ::-webkit-scrollbar{width:4px;height:4px;}
 ::-webkit-scrollbar-track{background:transparent;}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+/* TOAST */
+#toast{position:fixed;bottom:24px;right:24px;z-index:99999;display:flex;flex-direction:column;gap:8px;pointer-events:none;}
+.toast-msg{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:12px 18px;font-size:13px;color:var(--text);box-shadow:0 4px 20px rgba(0,0,0,.5);transform:translateX(120%);transition:transform .3s ease;pointer-events:none;}
+.toast-msg.show{transform:translateX(0);}
+.toast-msg.success{border-left:3px solid var(--green);}
+.toast-msg.error{border-left:3px solid var(--accent4);}
+.toast-msg.info{border-left:3px solid var(--accent1);}
 /* LOCK */
 #lock{display:flex;position:fixed;inset:0;background:rgba(10,16,24,.97);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:20px;}
 .lock-logo{font-family:'Prompt',sans-serif;font-size:26px;font-weight:800;color:var(--accent1);}
@@ -133,9 +126,16 @@ tr:hover:not(:last-child) td{background:rgba(255,255,255,.03);}
 .inp:focus{border-color:var(--accent1);}
 .modal-btn{background:var(--accent1);color:#fff;border:none;border-radius:8px;padding:11px;font-family:'Sarabun',sans-serif;font-size:14px;font-weight:700;cursor:pointer;}
 .modal-btn:hover{background:#1a7de0;}
+/* DATA SOURCE BADGE */
+.ds-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:600;}
+.ds-badge.live{background:rgba(52,211,153,.15);color:var(--green);border:1px solid rgba(52,211,153,.3);}
+.ds-badge.demo{background:rgba(245,166,35,.15);color:var(--accent3);border:1px solid rgba(245,166,35,.3);}
 </style>
 </head>
 <body>
+
+<!-- TOAST -->
+<div id="toast"></div>
 
 <!-- LOCK -->
 <div id="lock">
@@ -156,35 +156,26 @@ tr:hover:not(:last-child) td{background:rgba(255,255,255,.03);}
     <div class="sb-title">🅿️ DASHBOARD</div>
     <div class="sb-sub">สรุปยอดรับเงินลานจอด</div>
   </div>
-  <div class="nav-item active" data-page="overview">
-    <span class="nav-icon">📊</span> ภาพรวม
-  </div>
-  <div class="nav-item" data-page="compare">
-    <span class="nav-icon">🏪</span> เปรียบเทียบ Outlet
-  </div>
-  <div class="nav-item" data-page="daily">
-    <span class="nav-icon">📅</span> เจาะลึกตามวัน
-  </div>
-  <div class="nav-item" data-page="cashqr">
-    <span class="nav-icon">💳</span> เงินสด VS QR
-  </div>
-  <div class="nav-item" data-page="report">
-    <span class="nav-icon">📋</span> รายงานสรุป
-  </div>
-  <div class="sb-footer">Last Update: <span id="lastupdate">28/05/2026 14:30</span></div>
+  <div class="nav-item active" data-page="overview"><span class="nav-icon">📊</span> ภาพรวม</div>
+  <div class="nav-item" data-page="compare"><span class="nav-icon">🏪</span> เปรียบเทียบ Outlet</div>
+  <div class="nav-item" data-page="daily"><span class="nav-icon">📅</span> เจาะลึกตามวัน</div>
+  <div class="nav-item" data-page="cashqr"><span class="nav-icon">💳</span> เงินสด VS QR</div>
+  <div class="nav-item" data-page="report"><span class="nav-icon">📋</span> รายงานสรุป</div>
+  <div class="sb-footer">Last Update: <span id="lastupdate">-</span></div>
 </div>
 
 <!-- MAIN -->
 <div id="main">
-  <!-- TOPBAR -->
   <div id="topbar">
-    <div class="fg"><span class="fg-ico">📅</span><div><div class="fg-lbl">เดือน</div><div class="fg-val">พฤษภาคม 2026</div></div></div>
-    <div class="fg"><span class="fg-ico">📆</span><div><div class="fg-lbl">วันที่</div><div class="fg-val" id="date-range">1/5/2026 - 28/5/2026</div></div></div>
+    <div class="fg"><span class="fg-ico">📅</span><div><div class="fg-lbl">เดือน</div><div class="fg-val" id="tb-month">-</div></div></div>
+    <div class="fg"><span class="fg-ico">📆</span><div><div class="fg-lbl">วันที่</div><div class="fg-val" id="date-range">-</div></div></div>
     <div class="fg"><span class="fg-ico">🏪</span><div><div class="fg-lbl">Outlet</div><div class="fg-val">All</div></div></div>
     <div class="fg"><span class="fg-ico">💰</span><div><div class="fg-lbl">ประเภท</div><div class="fg-val">All</div></div></div>
+    <span id="ds-badge-wrap"></span>
     <input type="file" id="file-inp" accept=".xlsx,.xls" onchange="handleFile(event)">
     <button class="btn btn-primary" onclick="document.getElementById('file-inp').click()">⬆ อัปเดตข้อมูล</button>
     <button class="btn btn-outline" onclick="exportData()">⬇ Export Excel</button>
+    <button class="btn btn-danger" onclick="clearSavedData()" title="ล้างข้อมูลที่บันทึกไว้ กลับไปใช้ข้อมูลตัวอย่าง">🗑 ล้างข้อมูล</button>
   </div>
 
   <!-- PAGE: ภาพรวม -->
@@ -261,12 +252,26 @@ tr:hover:not(:last-child) td{background:rgba(255,255,255,.03);}
     <div class="report-grid" id="report-grid"></div>
     <div class="cc"><div class="cc-title">Trend เงินสด VS QR ตลอดเดือน</div><div class="cw" style="height:180px"><canvas id="rpt-trend"></canvas></div></div>
   </div>
-
-</div><!-- end main -->
+</div>
 
 <script>
+// ══ STORAGE KEYS ══
+const STORAGE_KEY = 'parking_dashboard_data';
+const STORAGE_META = 'parking_dashboard_meta';
+
+// ══ TOAST ══
+function showToast(msg, type='info', duration=3500){
+  const c=document.getElementById('toast');
+  const t=document.createElement('div');
+  t.className=`toast-msg ${type}`;
+  t.textContent=msg;
+  c.appendChild(t);
+  requestAnimationFrame(()=>{requestAnimationFrame(()=>{t.classList.add('show');});});
+  setTimeout(()=>{t.classList.remove('show');setTimeout(()=>t.remove(),350);},duration);
+}
+
 // ══ PASSWORD ══
-const CORRECT_PASSWORD = '1234';
+const CORRECT_PASSWORD='1234';
 function checkPwd(){
   const v=document.getElementById('lock-inp').value;
   if(v===CORRECT_PASSWORD){document.getElementById('lock').style.display='none';init();}
@@ -299,8 +304,8 @@ const OUTLETS=[
   {k:'Cosmo',  lb:'Cosmo',      col:'#e63946'},
 ];
 
-// ══ DATA ══
-let DATA={daily:[
+// ══ DEFAULT DATA ══
+const DEFAULT_DATA={daily:[
   {date:"2026-05-01",day:1,cash:26040,qr:7230,total:33270,CW_total:420,Outlet1_total:580,Outlet23_total:540,Outlet4_total:800,Outlet5_total:560,Outlet51_total:0,Outlet6_total:300,SW_total:0,RuamJai_total:12150,Cosmo_total:17920},
   {date:"2026-05-02",day:2,cash:34830,qr:8680,total:43510,CW_total:1000,Outlet1_total:0,Outlet23_total:0,Outlet4_total:480,Outlet5_total:0,Outlet51_total:0,Outlet6_total:540,SW_total:0,RuamJai_total:17670,Cosmo_total:23820},
   {date:"2026-05-03",day:3,cash:38720,qr:10080,total:48800,CW_total:840,Outlet1_total:0,Outlet23_total:0,Outlet4_total:540,Outlet5_total:0,Outlet51_total:0,Outlet6_total:460,SW_total:0,RuamJai_total:17220,Cosmo_total:29740},
@@ -331,10 +336,73 @@ let DATA={daily:[
   {date:"2026-05-28",day:28,cash:36500,qr:82390,total:118890,CW_total:1520,Outlet1_total:860,Outlet23_total:560,Outlet4_total:2160,Outlet5_total:840,Outlet51_total:360,Outlet6_total:1120,SW_total:0,RuamJai_total:38330,Cosmo_total:73140}
 ]};
 
+// ══ DATA STATE ══
+let DATA = {daily:[]};
+let isLiveData = false;
+
+// ══ LOCALSTORAGE SAVE/LOAD ══
+function saveToStorage(daily, meta){
+  try{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(daily));
+    localStorage.setItem(STORAGE_META, JSON.stringify(meta));
+    return true;
+  }catch(e){
+    console.warn('localStorage save failed:', e);
+    showToast('⚠️ บันทึก localStorage ไม่สำเร็จ (อาจเต็ม)', 'error');
+    return false;
+  }
+}
+
+function loadFromStorage(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    const meta = localStorage.getItem(STORAGE_META);
+    if(raw){
+      const daily = JSON.parse(raw);
+      if(Array.isArray(daily) && daily.length > 0){
+        return { daily, meta: meta ? JSON.parse(meta) : null };
+      }
+    }
+  }catch(e){
+    console.warn('localStorage load failed:', e);
+  }
+  return null;
+}
+
+function clearSavedData(){
+  if(!confirm('ล้างข้อมูลที่อัปโหลดไว้ทั้งหมด และกลับไปใช้ข้อมูลตัวอย่าง?')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  localStorage.removeItem(STORAGE_META);
+  DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
+  isLiveData = false;
+  updateDataSourceBadge();
+  document.getElementById('lastupdate').textContent = '28/05/2026 14:30';
+  fullReset();
+  showToast('🗑 ล้างข้อมูลแล้ว กลับไปใช้ข้อมูลตัวอย่าง', 'info');
+}
+
+function updateDataSourceBadge(){
+  const wrap = document.getElementById('ds-badge-wrap');
+  if(isLiveData){
+    wrap.innerHTML = '<span class="ds-badge live">🟢 ข้อมูลจริง</span>';
+  } else {
+    wrap.innerHTML = '<span class="ds-badge demo">🟡 ข้อมูลตัวอย่าง</span>';
+  }
+}
+
+// ══ FORMAT HELPERS ══
 const fmt=n=>Math.round(n).toLocaleString('th-TH');
 const fmtD=d=>{const p=d.split('-');return`${p[2]}/${p[1]}/${p[0]}`;};
 const dash=v=>v>0?fmt(v):'-';
 let CH={};
+
+function getMonthLabel(dateStr){
+  const months=['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+  const parts = dateStr.split('-');
+  const m = parseInt(parts[1])-1;
+  const y = parseInt(parts[0])+543;
+  return `${months[m]} ${y}`;
+}
 
 function compute(){
   const d=DATA.daily;
@@ -363,12 +431,19 @@ function renderPage(page){
 
 // ══ OVERVIEW ══
 function buildOverview(s){
-  // KPIs
+  const d=DATA.daily;
+  const firstDate = d[0].date;
+  const lastDate = d[d.length-1].date;
+
+  // Update topbar
+  document.getElementById('tb-month').textContent = getMonthLabel(firstDate);
+  document.getElementById('date-range').textContent = `${fmtD(firstDate)} - ${fmtD(lastDate)}`;
+
   document.getElementById('kpi-total').textContent=fmt(s.total);
   document.getElementById('kpi-cash').textContent=fmt(s.cash);
   document.getElementById('kpi-qr').textContent=fmt(s.qr);
   document.getElementById('kpi-avg').textContent=fmt(s.avg);
-  document.getElementById('kpi-days').textContent=`▲ ${DATA.daily.length} วัน`;
+  document.getElementById('kpi-days').textContent=`▲ ${d.length} วัน`;
   document.getElementById('kpi-cash-pct').textContent=s.cashPct.toFixed(2)+'%';
   document.getElementById('kpi-qr-pct').textContent=s.qrPct.toFixed(2)+'%';
   document.getElementById('kpi-cash-bar').style.width=s.cashPct+'%';
@@ -385,32 +460,26 @@ function buildOverview(s){
   document.getElementById('pnl-qr-bar').style.width=s.qrPct+'%';
   document.getElementById('pnl-cash-pct').textContent=s.cashPct.toFixed(2)+'%';
   document.getElementById('pnl-qr-pct').textContent=s.qrPct.toFixed(2)+'%';
-  document.getElementById('date-range').textContent=`1/5/2026 - ${DATA.daily[DATA.daily.length-1].day}/5/2026`;
 
-  const d=DATA.daily;
   // Main chart
   if(CH.main)CH.main.destroy();
   CH.main=new Chart(document.getElementById('mainChart').getContext('2d'),{data:{labels:d.map(r=>r.day),datasets:[{type:'bar',label:'เงินสด',data:d.map(r=>r.cash),backgroundColor:'rgba(29,140,248,.75)',order:2},{type:'bar',label:'QR',data:d.map(r=>r.qr),backgroundColor:'rgba(52,211,153,.75)',order:2},{type:'line',label:'รวม',data:d.map(r=>r.total),borderColor:'#fff',borderWidth:2,pointRadius:2,fill:false,tension:.3,order:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${fmt(c.raw)} บาท`}}},scales:{x:{stacked:true,ticks:{color:'#7a9bc0',font:{size:9}},grid:{color:'#243550'}},y:{stacked:true,ticks:{color:'#7a9bc0',font:{size:9},callback:v=>(v/1000)+'k'},grid:{color:'#243550'}}}}});
 
-  // Outlet bar
   if(CH.ob)CH.ob.destroy();
   CH.ob=new Chart(document.getElementById('outletBar').getContext('2d'),{type:'bar',data:{labels:OUTLETS.map(o=>o.lb),datasets:[{label:'ยอดรวม',data:OUTLETS.map(o=>s.outletTotals[o.k]||0),backgroundColor:OUTLETS.map(o=>o.col)}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${fmt(c.raw)} บาท`}}},scales:{x:{ticks:{color:'#7a9bc0',font:{size:7.5},maxRotation:35},grid:{color:'#243550'}},y:{ticks:{color:'#7a9bc0',font:{size:9},callback:v=>(v/1000)+'k'},grid:{color:'#243550'}}}}});
 
-  // Donut
   if(CH.dn)CH.dn.destroy();
   const fil=OUTLETS.filter(o=>(s.outletTotals[o.k]||0)>0);
   CH.dn=new Chart(document.getElementById('donut').getContext('2d'),{type:'doughnut',data:{labels:fil.map(o=>o.lb),datasets:[{data:fil.map(o=>s.outletTotals[o.k]),backgroundColor:fil.map(o=>o.col),borderWidth:1,borderColor:'#162030'}]},options:{responsive:true,maintainAspectRatio:false,cutout:'58%',plugins:{legend:{position:'right',labels:{color:'#7a9bc0',font:{size:8.5},padding:5,boxWidth:9}},tooltip:{callbacks:{label:c=>` ${c.label}: ${fmt(c.raw)} (${(c.raw/s.total*100).toFixed(2)}%)`}}}}});
 
-  // Heatmap
   buildHeatmap();
 
-  // Hbar
   if(CH.hb)CH.hb.destroy();
   const srt=[...OUTLETS].filter(o=>(s.outletTotals[o.k]||0)>0).sort((a,b)=>(s.outletTotals[a.k]||0)-(s.outletTotals[b.k]||0));
   CH.hb=new Chart(document.getElementById('hbar').getContext('2d'),{type:'bar',data:{labels:srt.map(o=>o.lb),datasets:[{label:'ยอดรวม',data:srt.map(o=>s.outletTotals[o.k]||0),backgroundColor:srt.map(o=>o.col)}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${fmt(c.raw)} บาท`}}},scales:{x:{ticks:{color:'#7a9bc0',font:{size:8},callback:v=>(v/1000)+'k'},grid:{color:'#243550'}},y:{ticks:{color:'#7a9bc0',font:{size:8.5}},grid:{display:false}}}}});
 
   // Table
-  const tb=document.getElementById('tbl-body'); tb.innerHTML='';
+  const tb=document.getElementById('tbl-body');tb.innerHTML='';
   const tot={CW:0,Outlet1:0,Outlet23:0,Outlet4:0,Outlet5:0,Outlet51:0,Outlet6:0,SW:0,RuamJai:0,Cosmo:0,total:0,cash:0,qr:0};
   d.forEach(r=>{
     OUTLETS.forEach(o=>tot[o.k]+=(r[o.k+'_total']||0));
@@ -424,7 +493,7 @@ function buildOverview(s){
   tb.appendChild(tr);
 
   // Top5
-  const t5b=document.getElementById('top5-body'); t5b.innerHTML='';
+  const t5b=document.getElementById('top5-body');t5b.innerHTML='';
   [...d].sort((a,b)=>b.total-a.total).slice(0,5).forEach((r,i)=>{
     const rc=['r1','r2','r3','',''];
     const tr=document.createElement('tr');
@@ -432,9 +501,8 @@ function buildOverview(s){
     t5b.appendChild(tr);
   });
 
-  // Summary
   document.getElementById('sum-box').innerHTML=`
-    <div class="sum-item">📊 <span>ยอดรวม <b>${fmt(s.total)} บาท</b> / ${DATA.daily.length} วัน</span></div>
+    <div class="sum-item">📊 <span>ยอดรวม <b>${fmt(s.total)} บาท</b> / ${d.length} วัน</span></div>
     <div class="sum-item">💵 <span>เงินสด <b>${s.cashPct.toFixed(2)}%</b> | QR <b>${s.qrPct.toFixed(2)}%</b></span></div>
     <div class="sum-item">🏆 <span>Outlet สูงสุด: <b>${topLb}</b> (${(s.topEntry[1]/s.total*100).toFixed(1)}%)</span></div>
     <div class="sum-item">⭐ <span>วันสูงสุด: <b>${fmtD(s.topDay.date)}</b> = ${fmt(s.topDay.total)} บาท</span></div>`;
@@ -444,7 +512,8 @@ function buildHeatmap(){
   const d=DATA.daily;const mx=Math.max(...d.map(r=>r.total));const mn=Math.min(...d.map(r=>r.total));
   function col(v){if(!v)return'#1a2840';const t=(v-mn)/(mx-mn);if(t<.25)return`rgba(29,111,160,${.4+t*1.5})`;if(t<.5)return`rgba(29,140,248,${.5+t})`;if(t<.75)return`rgba(245,166,35,${.6+t*.5})`;return`rgba(230,57,70,${.7+t*.3})`;}
   const hm=document.getElementById('heatmap');hm.innerHTML='';
-  const lbl=document.createElement('div');lbl.style.cssText='font-size:9px;color:var(--muted);margin-bottom:4px';lbl.textContent='พ.ค. 2026';hm.appendChild(lbl);
+  const lbl=document.createElement('div');lbl.style.cssText='font-size:9px;color:var(--muted);margin-bottom:4px';
+  lbl.textContent=getMonthLabel(d[0].date);hm.appendChild(lbl);
   const g=document.createElement('div');g.style.cssText=`display:grid;grid-template-columns:repeat(${d.length},1fr);gap:2px`;
   d.forEach(r=>{const c=document.createElement('div');c.style.cssText=`height:22px;border-radius:3px;background:${col(r.total)};display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s`;c.title=`${fmtD(r.date)}: ${fmt(r.total)} บาท`;const n=document.createElement('div');n.style.cssText='font-size:8px;color:rgba(255,255,255,.85);font-weight:600';n.textContent=r.day;c.appendChild(n);g.appendChild(c);});
   hm.appendChild(g);
@@ -453,7 +522,6 @@ function buildHeatmap(){
 // ══ COMPARE PAGE ══
 function buildCompare(s){
   const d=DATA.daily;
-  // Outlet KPI cards
   const grid=document.getElementById('outlet-kpi-grid');grid.innerHTML='';
   const maxV=Math.max(...OUTLETS.map(o=>s.outletTotals[o.k]||0));
   OUTLETS.forEach(o=>{
@@ -465,16 +533,13 @@ function buildCompare(s){
     grid.appendChild(div);
   });
 
-  // Bar chart
   if(CH.cb)CH.cb.destroy();
   CH.cb=new Chart(document.getElementById('cmp-bar').getContext('2d'),{type:'bar',data:{labels:OUTLETS.map(o=>o.lb),datasets:[{label:'ยอดรวม',data:OUTLETS.map(o=>s.outletTotals[o.k]||0),backgroundColor:OUTLETS.map(o=>o.col)}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${fmt(c.raw)} บาท`}}},scales:{x:{ticks:{color:'#7a9bc0',font:{size:10}},grid:{color:'#243550'}},y:{ticks:{color:'#7a9bc0',callback:v=>(v/1000)+'k'},grid:{color:'#243550'}}}}});
 
-  // Donut
   if(CH.cd)CH.cd.destroy();
   const fil=OUTLETS.filter(o=>(s.outletTotals[o.k]||0)>0);
   CH.cd=new Chart(document.getElementById('cmp-donut').getContext('2d'),{type:'doughnut',data:{labels:fil.map(o=>o.lb),datasets:[{data:fil.map(o=>s.outletTotals[o.k]),backgroundColor:fil.map(o=>o.col),borderWidth:1,borderColor:'#162030'}]},options:{responsive:true,maintainAspectRatio:false,cutout:'55%',plugins:{legend:{position:'right',labels:{color:'#7a9bc0',font:{size:10},padding:6,boxWidth:10}},tooltip:{callbacks:{label:c=>` ${c.label}: ${fmt(c.raw)} (${(c.raw/s.total*100).toFixed(2)}%)`}}}}});
 
-  // Stacked
   if(CH.cs)CH.cs.destroy();
   CH.cs=new Chart(document.getElementById('cmp-stack').getContext('2d'),{type:'bar',data:{labels:d.map(r=>r.day),datasets:OUTLETS.filter(o=>(s.outletTotals[o.k]||0)>0).map(o=>({label:o.lb,data:d.map(r=>r[o.k+'_total']||0),backgroundColor:o.col}))},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{color:'#7a9bc0',font:{size:9},padding:6,boxWidth:9}}},scales:{x:{stacked:true,ticks:{color:'#7a9bc0',font:{size:9}},grid:{color:'#243550'}},y:{stacked:true,ticks:{color:'#7a9bc0',font:{size:9},callback:v=>(v/1000)+'k'},grid:{color:'#243550'}}}}});
 }
@@ -493,7 +558,6 @@ function buildDaily(s){
   if(CH.dt10)CH.dt10.destroy();
   CH.dt10=new Chart(document.getElementById('daily-top10').getContext('2d'),{type:'bar',data:{labels:top10.map(r=>fmtD(r.date)),datasets:[{label:'ยอดรวม',data:top10.map(r=>r.total),backgroundColor:top10.map(r=>`rgba(29,140,248,${.4+r.total/top10[top10.length-1].total*.6})`)}]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${fmt(c.raw)} บาท`}}},scales:{x:{ticks:{color:'#7a9bc0',font:{size:9},callback:v=>(v/1000)+'k'},grid:{color:'#243550'}},y:{ticks:{color:'#7a9bc0',font:{size:9}},grid:{display:false}}}}});
 
-  // Table
   const tb=document.getElementById('daily-tbl');tb.innerHTML='';
   const tot={CW:0,Outlet1:0,Outlet23:0,Outlet4:0,Outlet5:0,Outlet51:0,Outlet6:0,SW:0,RuamJai:0,Cosmo:0,total:0,cash:0,qr:0};
   d.forEach(r=>{
@@ -586,66 +650,156 @@ function buildReport(s){
   CH.rt=new Chart(document.getElementById('rpt-trend').getContext('2d'),{type:'line',data:{labels:d.map(r=>r.day),datasets:[{label:'รวม',data:d.map(r=>r.total),borderColor:'#fff',borderWidth:2,fill:false,tension:.3,pointRadius:2},{label:'เงินสด',data:d.map(r=>r.cash),borderColor:'#1d8cf8',fill:false,tension:.3,pointRadius:1},{label:'QR',data:d.map(r=>r.qr),borderColor:'#34d399',fill:false,tension:.3,pointRadius:1}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#7a9bc0',font:{size:10}}}},scales:{x:{ticks:{color:'#7a9bc0',font:{size:9}},grid:{color:'#243550'}},y:{ticks:{color:'#7a9bc0',font:{size:9},callback:v=>(v/1000)+'k'},grid:{color:'#243550'}}}}});
 }
 
-// ══ FILE UPLOAD ══
+// ══ FILE UPLOAD (FIXED) ══
 function handleFile(e){
-  const file=e.target.files[0];if(!file)return;
+  const file=e.target.files[0]; if(!file) return;
+  showToast('⏳ กำลังอ่านไฟล์...', 'info', 2000);
   const reader=new FileReader();
   reader.onload=ev=>{
     try{
       const wb=XLSX.read(new Uint8Array(ev.target.result),{type:'array'});
       const ws=wb.Sheets[wb.SheetNames[0]];
+
+      // อ่านเป็น array ของ array โดยไม่แปลง raw เพื่อให้ได้ serial date จาก Excel
       const raw=XLSX.utils.sheet_to_json(ws,{header:1,defval:null,raw:true});
+
+      console.log('Total rows:', raw.length);
+      console.log('Row 0:', raw[0]);
+      console.log('Row 3:', raw[3]);
+
+      // ── หา header row ──
+      // สแกนหาแถวที่คอลัมน์แรกเป็น date (serial หรือ string วันที่)
+      let dataStartRow = -1;
+      let targetMonth = null;
+
+      for(let i=0; i<raw.length; i++){
+        const row=raw[i]; if(!row||!row[0]) continue;
+        const dateStr = parseExcelDate(row[0]);
+        if(dateStr){
+          dataStartRow = i;
+          targetMonth = dateStr.substring(0,7);
+          console.log('Data starts at row:', i, 'date:', dateStr, 'month:', targetMonth);
+          break;
+        }
+      }
+
+      if(dataStartRow < 0){
+        showToast('❌ ไม่พบข้อมูลวันที่ในไฟล์ กรุณาตรวจสอบรูปแบบ', 'error', 5000);
+        return;
+      }
+
       const nd=[];
-      // หาเดือนหลักจากแถวแรกที่มีข้อมูล เพื่อกรองวันที่ผิดเดือนออก
-      let targetMonth=null;
-      for(let i=3;i<raw.length;i++){
-        const row=raw[i]; if(!row[0]) continue;
-        let dv=row[0];
-        if(typeof dv==='number'){
-          // Excel serial → JS date (timezone-safe)
-          const d=new Date(Math.round((dv-25569)*86400*1000));
-          const y=d.getUTCFullYear(),m=String(d.getUTCMonth()+1).padStart(2,'0'),dd=String(d.getUTCDate()).padStart(2,'0');
-          dv=`${y}-${m}-${dd}`;
-        } else dv=String(dv).substring(0,10);
-        if(!/^\d{4}-\d{2}-\d{2}$/.test(dv)) continue;
-        if(!targetMonth) targetMonth=dv.substring(0,7); // เช่น "2026-05"
-        break;
-      }
-      for(let i=3;i<raw.length;i++){
-        const row=raw[i];if(!row[0])continue;
-        let dv=row[0];
-        if(typeof dv==='number'){
-          const d=new Date(Math.round((dv-25569)*86400*1000));
-          const y=d.getUTCFullYear(),m=String(d.getUTCMonth()+1).padStart(2,'0'),dd=String(d.getUTCDate()).padStart(2,'0');
-          dv=`${y}-${m}-${dd}`;
-        } else if(dv instanceof Date){
-          const y=dv.getFullYear(),m=String(dv.getMonth()+1).padStart(2,'0'),dd=String(dv.getDate()).padStart(2,'0');
-          dv=`${y}-${m}-${dd}`;
-        } else dv=String(dv).substring(0,10);
-        if(!/^\d{4}-\d{2}-\d{2}$/.test(dv)) continue;
-        // กรองเฉพาะเดือนเดียวกับแถวแรก
+      for(let i=dataStartRow; i<raw.length; i++){
+        const row=raw[i]; if(!row||!row[0]) continue;
+        const dv = parseExcelDate(row[0]);
+        if(!dv) continue;
         if(targetMonth && !dv.startsWith(targetMonth)) continue;
-        const v=x=>{if(x===null||x===undefined)return 0;const n=parseFloat(String(x).replace(/[^0-9.-]/g,''));return isNaN(n)?0:n;};
-        const r={date:dv,day:parseInt(dv.split('-')[2]),Outlet1_cash:v(row[1]),Outlet1_qr:v(row[2]),Outlet23_cash:v(row[3]),Outlet23_qr:v(row[4]),Outlet4_cash:v(row[5]),Outlet4_qr:v(row[6]),Outlet5_cash:v(row[7]),Outlet5_qr:v(row[8]),Outlet51_cash:v(row[9]),Outlet51_qr:v(row[10]),Outlet6_cash:v(row[11]),Outlet6_qr:v(row[12]),CW_cash:v(row[13]),CW_qr:v(row[14]),SW_cash:v(row[15]),SW_qr:v(row[16]),RuamJai_cash:v(row[17]),RuamJai_qr:v(row[18]),Cosmo_cash:v(row[19]),Cosmo_qr:v(row[20])};
-        OUTLETS.forEach(o=>{r[o.k+'_total']=(r[o.k+'_cash']||0)+(r[o.k+'_qr']||0);});
-        r.cash=OUTLETS.reduce((s,o)=>s+(r[o.k+'_cash']||0),0);
-        r.qr=OUTLETS.reduce((s,o)=>s+(r[o.k+'_qr']||0),0);
-        r.total=v(row[21])||(r.cash+r.qr);
-        if(r.total>0)nd.push(r);
+
+        const v=x=>{
+          if(x===null||x===undefined||x==='') return 0;
+          if(typeof x==='number') return x;
+          const n=parseFloat(String(x).replace(/[^0-9.-]/g,''));
+          return isNaN(n)?0:n;
+        };
+
+        // ── Column mapping ตาม Excel ต้นฉบับ ──
+        // col[0]=date, [1]=Outlet1_cash, [2]=Outlet1_qr, [3]=Outlet23_cash, [4]=Outlet23_qr
+        // [5]=Outlet4_cash, [6]=Outlet4_qr, [7]=Outlet5_cash, [8]=Outlet5_qr
+        // [9]=Outlet51_cash, [10]=Outlet51_qr, [11]=Outlet6_cash, [12]=Outlet6_qr
+        // [13]=CW_cash, [14]=CW_qr, [15]=SW_cash, [16]=SW_qr
+        // [17]=RuamJai_cash, [18]=RuamJai_qr, [19]=Cosmo_cash, [20]=Cosmo_qr, [21]=total
+
+        const r={
+          date:dv, day:parseInt(dv.split('-')[2]),
+          Outlet1_cash:v(row[1]),  Outlet1_qr:v(row[2]),
+          Outlet23_cash:v(row[3]), Outlet23_qr:v(row[4]),
+          Outlet4_cash:v(row[5]),  Outlet4_qr:v(row[6]),
+          Outlet5_cash:v(row[7]),  Outlet5_qr:v(row[8]),
+          Outlet51_cash:v(row[9]), Outlet51_qr:v(row[10]),
+          Outlet6_cash:v(row[11]), Outlet6_qr:v(row[12]),
+          CW_cash:v(row[13]),      CW_qr:v(row[14]),
+          SW_cash:v(row[15]),      SW_qr:v(row[16]),
+          RuamJai_cash:v(row[17]), RuamJai_qr:v(row[18]),
+          Cosmo_cash:v(row[19]),   Cosmo_qr:v(row[20]),
+        };
+
+        // คำนวณ _total ของแต่ละ outlet
+        OUTLETS.forEach(o=>{
+          r[o.k+'_total']=(r[o.k+'_cash']||0)+(r[o.k+'_qr']||0);
+        });
+
+        // คำนวณ cash, qr รวม
+        r.cash = OUTLETS.reduce((s,o)=>s+(r[o.k+'_cash']||0), 0);
+        r.qr   = OUTLETS.reduce((s,o)=>s+(r[o.k+'_qr']||0), 0);
+
+        // ใช้คอลัมน์ total ถ้ามี ไม่งั้นคำนวณเอง
+        const totalFromFile = v(row[21]);
+        r.total = totalFromFile > 0 ? totalFromFile : (r.cash + r.qr);
+
+        if(r.total > 0) nd.push(r);
       }
-      if(!nd.length){alert('ไม่พบข้อมูล');return;}
-      DATA.daily=nd.sort((a,b)=>a.day-b.day);
+
+      if(!nd.length){
+        showToast('❌ ไม่พบข้อมูลที่ถูกต้อง กรุณาตรวจสอบรูปแบบไฟล์', 'error', 5000);
+        return;
+      }
+
+      // ── บันทึกลง localStorage ──
+      DATA.daily = nd.sort((a,b)=>a.day-b.day);
+      isLiveData = true;
+
       const now=new Date();
-      document.getElementById('lastupdate').textContent=`${String(now.getDate()).padStart(2,'0')}/${String(now.getMonth()+1).padStart(2,'0')}/${now.getFullYear()} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
-      renderedPages=new Set();
-      Object.values(CH).forEach(c=>{try{c.destroy();}catch(e){}});
-      CH={};
-      init();
-      alert(`✅ โหลดข้อมูลสำเร็จ ${nd.length} วัน`);
-    }catch(err){alert('Error: '+err.message);}
+      const nowStr=`${String(now.getDate()).padStart(2,'0')}/${String(now.getMonth()+1).padStart(2,'0')}/${now.getFullYear()} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+
+      const meta = {
+        lastUpdate: nowStr,
+        fileName: file.name,
+        days: nd.length,
+        month: targetMonth
+      };
+
+      const saved = saveToStorage(DATA.daily, meta);
+      document.getElementById('lastupdate').textContent = nowStr;
+      updateDataSourceBadge();
+
+      // ── Reset และ render ใหม่ ──
+      fullReset();
+
+      const savedMsg = saved ? ' (บันทึกแล้ว ✓)' : '';
+      showToast(`✅ โหลดสำเร็จ ${nd.length} วัน จาก ${file.name}${savedMsg}`, 'success', 4000);
+      console.log(`Loaded ${nd.length} rows. Sample:`, nd[0]);
+
+    }catch(err){
+      console.error('File parse error:', err);
+      showToast(`❌ เกิดข้อผิดพลาด: ${err.message}`, 'error', 6000);
+    }
   };
   reader.readAsArrayBuffer(file);
   e.target.value='';
+}
+
+// แปลงค่า date จาก Excel (serial number หรือ string)
+function parseExcelDate(val){
+  if(!val && val!==0) return null;
+  if(typeof val==='number'){
+    // Excel date serial → UTC date string
+    const d=new Date(Math.round((val-25569)*86400*1000));
+    if(isNaN(d.getTime())) return null;
+    const y=d.getUTCFullYear(), m=String(d.getUTCMonth()+1).padStart(2,'0'), dd=String(d.getUTCDate()).padStart(2,'0');
+    if(y<2000||y>2100) return null; // sanity check
+    return`${y}-${m}-${dd}`;
+  }
+  if(val instanceof Date){
+    const y=val.getFullYear(),m=String(val.getMonth()+1).padStart(2,'0'),dd=String(val.getDate()).padStart(2,'0');
+    return`${y}-${m}-${dd}`;
+  }
+  const s=String(val).trim();
+  // รองรับ YYYY-MM-DD
+  if(/^\d{4}-\d{2}-\d{2}/.test(s)) return s.substring(0,10);
+  // รองรับ DD/MM/YYYY
+  const m2=s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+  if(m2) return`${m2[3]}-${m2[2].padStart(2,'0')}-${m2[1].padStart(2,'0')}`;
+  return null;
 }
 
 function exportData(){
@@ -655,13 +809,37 @@ function exportData(){
   XLSX.utils.book_append_sheet(wb,ws,'Dashboard');XLSX.writeFile(wb,'dashboard_export.xlsx');
 }
 
+function fullReset(){
+  renderedPages=new Set();
+  Object.values(CH).forEach(c=>{try{c.destroy();}catch(e){}});
+  CH={};
+  init();
+}
+
 function init(){
   const s=compute();
   buildOverview(s);
   renderedPages.add('overview');
+  updateDataSourceBadge();
 }
 
-window.onload=()=>{setTimeout(()=>document.getElementById('lock-inp').focus(),100);};
+window.onload=()=>{
+  // โหลดข้อมูลจาก localStorage ก่อน (ถ้ามี)
+  const saved = loadFromStorage();
+  if(saved && saved.daily.length > 0){
+    DATA.daily = saved.daily;
+    isLiveData = true;
+    if(saved.meta){
+      document.getElementById('lastupdate').textContent = saved.meta.lastUpdate || '-';
+    }
+    console.log(`Restored ${DATA.daily.length} rows from localStorage`);
+  } else {
+    DATA = JSON.parse(JSON.stringify(DEFAULT_DATA));
+    isLiveData = false;
+    document.getElementById('lastupdate').textContent = '28/05/2026 14:30';
+  }
+  setTimeout(()=>document.getElementById('lock-inp').focus(), 100);
+};
 </script>
 </body>
 </html>
