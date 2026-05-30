@@ -572,7 +572,13 @@ function buildReport(s){
       ${OUTLETS.map(o=>`<div class="rep-row"><span class="rep-key">${o.lb}</span><span class="rep-val" style="color:${o.col}">${fmt(s.outletTotals[o.k]||0)} บาท</span></div>`).join('')}
     </div>
     <div class="rep-card"><div class="rep-title">🏆 Outlet สูงสุด-ต่ำสุด</div>
-      ${[...OUTLETS].filter(o=>(s.outletTotals[o.k]||0)>0).sort((a,b)=>(s.outletTotals[b.k]||0)-(s.outletTotals[a.k]||0)).map((o,i)=>`<div class="rep-row"><span class="rep-key">${i+1}. ${o.lb}</span><span class="rep-val" style="color:${o.col}">${(s.outletTotals[o.k]/s.total*100).toFixed(1)}%</span></div>`).join('')}
+      ${(()=>{
+        const sorted=[...OUTLETS].filter(o=>(s.outletTotals[o.k]||0)>0).sort((a,b)=>(s.outletTotals[b.k]||0)-(s.outletTotals[a.k]||0));
+        const pcts=sorted.map(o=>s.outletTotals[o.k]/s.total*100);
+        const sumSoFar=pcts.slice(0,-1).reduce((a,b)=>a+b,0);
+        pcts[pcts.length-1]=100-sumSoFar;
+        return sorted.map((o,i)=>`<div class="rep-row"><span class="rep-key">${i+1}. ${o.lb}</span><span class="rep-val" style="color:${o.col}">${pcts[i].toFixed(2)}%</span></div>`).join('');
+      })()}
     </div>`;
 
   if(CH.rt)CH.rt.destroy();
