@@ -436,7 +436,7 @@ function buildOverview(s){
   document.getElementById('sum-box').innerHTML=`
     <div class="sum-item">📊 <span>ยอดรวม <b>${fmt(s.total)} บาท</b> / ${DATA.daily.length} วัน</span></div>
     <div class="sum-item">💵 <span>เงินสด <b>${s.cashPct.toFixed(2)}%</b> | QR <b>${s.qrPct.toFixed(2)}%</b></span></div>
-    <div class="sum-item">🏆 <span>Outlet สูงสุด: <b>${topLb}</b> (${(s.topEntry[1]/s.total*100).toFixed(1)}%)</span></div>
+    <div class="sum-item">🏆 <span>พื้นที่ลานจอด สูงสุด: <b>${topLb}</b> (${(s.topEntry[1]/s.total*100).toFixed(1)}%)</span></div>
     <div class="sum-item">⭐ <span>วันสูงสุด: <b>${fmtD(s.topDay.date)}</b> = ${fmt(s.topDay.total)} บาท</span></div>`;
 }
 
@@ -568,10 +568,10 @@ function buildReport(s){
       <div class="rep-row"><span class="rep-key">เงินสด</span><span class="rep-val" style="color:#60a5fa">${fmt(s.cash)} บาท (${s.cashPct.toFixed(2)}%)</span></div>
       <div class="rep-row"><span class="rep-key">QR</span><span class="rep-val" style="color:var(--green)">${fmt(s.qr)} บาท (${s.qrPct.toFixed(2)}%)</span></div>
     </div>
-    <div class="rep-card"><div class="rep-title">🏪 ยอดรวมแต่ละ Outlet</div>
+    <div class="rep-card"><div class="rep-title">🏪 ยอดรวมแต่ละ พื้นที่ลานจอด</div>
       ${OUTLETS.map(o=>`<div class="rep-row"><span class="rep-key">${o.lb}</span><span class="rep-val" style="color:${o.col}">${fmt(s.outletTotals[o.k]||0)} บาท</span></div>`).join('')}
     </div>
-    <div class="rep-card"><div class="rep-title">🏆 Outlet สูงสุด-ต่ำสุด</div>
+    <div class="rep-card"><div class="rep-title">🏆 พื้นที่ลานจอด สูงสุด-ต่ำสุด</div>
       ${(()=>{
         const sorted=[...OUTLETS].filter(o=>(s.outletTotals[o.k]||0)>0).sort((a,b)=>(s.outletTotals[b.k]||0)-(s.outletTotals[a.k]||0));
         const pcts=sorted.map(o=>s.outletTotals[o.k]/s.total*100);
