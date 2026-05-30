@@ -458,7 +458,7 @@ function buildCompare(s){
   const maxV=Math.max(...OUTLETS.map(o=>s.outletTotals[o.k]||0));
   OUTLETS.forEach(o=>{
     const v=s.outletTotals[o.k]||0;
-    const pct=s.total>0?(v/s.total*100).toFixed(1):0;
+    const pct=s.total>0?(v/s.total*100).toFixed(2):0;
     const div=document.createElement('div');div.className='outlet-kc';
     div.style.borderTop=`3px solid ${o.col}`;
     div.innerHTML=`<div class="outlet-kc-name">${o.lb}</div><div class="outlet-kc-val" style="color:${o.col}">${fmt(v)}</div><div style="font-size:10px;color:var(--muted)">บาท | ${pct}%</div><div class="outlet-kc-bar"><div class="outlet-kc-fill" style="background:${o.col};width:${maxV>0?(v/maxV*100):0}%"></div></div>`;
