@@ -518,7 +518,7 @@ function updateDayDetail(v){
     {lb:'เงินสด',val:fmt(r.cash),col:'#60a5fa',ico:'💵'},
     {lb:'QR',val:fmt(r.qr),col:'var(--green)',ico:'📱'},
     {lb:'%ของเดือน',val:(r.total/s.total*100).toFixed(2)+'%',col:'var(--accent3)',ico:'📊'},
-    {lb:'Outlet สูงสุด',val:OUTLETS.reduce((a,o)=>((r[o.k+'_total']||0)>(r[a.k+'_total']||0)?o:a),OUTLETS[0]).lb,col:'var(--accent4)',ico:'🏆'},
+    {lb:'พื้นที่ลานจอด สูงสุด',val:OUTLETS.reduce((a,o)=>((r[o.k+'_total']||0)>(r[a.k+'_total']||0)?o:a),OUTLETS[0]).lb,col:'var(--accent4)',ico:'🏆'},
   ];
   items.forEach(it=>{
     const d=document.createElement('div'); d.className='cc';
