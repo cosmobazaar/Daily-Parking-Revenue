@@ -160,13 +160,13 @@ tr:hover:not(:last-child) td{background:rgba(255,255,255,.03);}
     <span class="nav-icon">📊</span> ภาพรวม
   </div>
   <div class="nav-item" data-page="compare">
-    <span class="nav-icon">🏪</span> เปรียบเทียบ Outlet
+    <span class="nav-icon">🏪</span> เปรียบเทียบ ลานจอดรถ
   </div>
   <div class="nav-item" data-page="daily">
     <span class="nav-icon">📅</span> เจาะลึกตามวัน
   </div>
   <div class="nav-item" data-page="cashqr">
-    <span class="nav-icon">💳</span> เงินสด VS QR
+    <span class="nav-icon">💳</span> เงินสด และ QR
   </div>
   <div class="nav-item" data-page="report">
     <span class="nav-icon">📋</span> รายงานสรุป
@@ -180,7 +180,7 @@ tr:hover:not(:last-child) td{background:rgba(255,255,255,.03);}
   <div id="topbar">
     <div class="fg"><span class="fg-ico">📅</span><div><div class="fg-lbl">เดือน</div><div class="fg-val">พฤษภาคม 2026</div></div></div>
     <div class="fg"><span class="fg-ico">📆</span><div><div class="fg-lbl">วันที่</div><div class="fg-val" id="date-range">1/5/2026 - 28/5/2026</div></div></div>
-    <div class="fg"><span class="fg-ico">🏪</span><div><div class="fg-lbl">Outlet</div><div class="fg-val">All</div></div></div>
+    <div class="fg"><span class="fg-ico">🏪</span><div><div class="fg-lbl">พื้นที่ลานจอด</div><div class="fg-val">All</div></div></div>
     <div class="fg"><span class="fg-ico">💰</span><div><div class="fg-lbl">ประเภท</div><div class="fg-val">All</div></div></div>
     <input type="file" id="file-inp" accept=".xlsx,.xls" onchange="handleFile(event)">
     <button class="btn btn-primary" onclick="document.getElementById('file-inp').click()">⬆ อัปเดตข้อมูล</button>
@@ -199,8 +199,8 @@ tr:hover:not(:last-child) td{background:rgba(255,255,255,.03);}
     </div>
     <div class="r3">
       <div class="cc"><div class="cc-title">ยอดรวมรายวัน<div class="legend"><div class="leg-item"><div class="leg-dot" style="background:var(--accent1)"></div>เงินสด</div><div class="leg-item"><div class="leg-dot" style="background:var(--green)"></div>QR</div><div class="leg-item"><div class="leg-dot" style="background:#fff"></div>รวม</div></div></div><div class="cw" style="height:160px"><canvas id="mainChart"></canvas></div></div>
-      <div class="cc"><div class="cc-title">ยอดรวมแยก Outlet</div><div class="cw" style="height:160px"><canvas id="outletBar"></canvas></div></div>
-      <div class="cc"><div class="cc-title">สัดส่วนตาม Outlet</div><div class="cw" style="height:160px"><canvas id="donut"></canvas></div></div>
+      <div class="cc"><div class="cc-title">ยอดรวมแยก พื้นที่ลานจอด</div><div class="cw" style="height:160px"><canvas id="outletBar"></canvas></div></div>
+      <div class="cc"><div class="cc-title">สัดส่วนตาม พื้นที่ลานจอด</div><div class="cw" style="height:160px"><canvas id="donut"></canvas></div></div>
     </div>
     <div class="r3b">
       <div class="cc"><div class="cc-title">Heatmap ยอดรวมรายวัน</div><div id="heatmap"></div><div style="display:flex;align-items:center;gap:6px;margin-top:5px"><div style="font-size:9px;color:var(--muted)">น้อย</div><div style="display:flex;gap:2px;flex:1"><div style="flex:1;height:6px;border-radius:2px;background:#1a3a5c"></div><div style="flex:1;height:6px;border-radius:2px;background:#1d6fa0"></div><div style="flex:1;height:6px;border-radius:2px;background:#1d8cf8"></div><div style="flex:1;height:6px;border-radius:2px;background:#f5a623"></div><div style="flex:1;height:6px;border-radius:2px;background:#e63946"></div></div><div style="font-size:9px;color:var(--muted)">มาก</div></div></div>
@@ -216,13 +216,13 @@ tr:hover:not(:last-child) td{background:rgba(255,255,255,.03);}
 
   <!-- PAGE: เปรียบเทียบ Outlet -->
   <div class="page" id="page-compare">
-    <div class="page-header"><div class="page-title">🏪 เปรียบเทียบ Outlet</div><div class="page-sub">เปรียบเทียบยอดรับเงินแต่ละลานจอด</div></div>
+    <div class="page-header"><div class="page-title">🏪 เปรียบเทียบ พื้นที่ลานจอด</div><div class="page-sub">เปรียบเทียบยอดรับเงินแต่ละลานจอด</div></div>
     <div class="outlet-grid" id="outlet-kpi-grid"></div>
     <div class="r2">
-      <div class="cc"><div class="cc-title">ยอดรวมแต่ละ Outlet (Bar Chart)</div><div class="cw" style="height:250px"><canvas id="cmp-bar"></canvas></div></div>
-      <div class="cc"><div class="cc-title">สัดส่วน Outlet (Donut)</div><div class="cw" style="height:250px"><canvas id="cmp-donut"></canvas></div></div>
+      <div class="cc"><div class="cc-title">ยอดรวมแต่ละ พื้นที่ลานจอด (Bar Chart)</div><div class="cw" style="height:250px"><canvas id="cmp-bar"></canvas></div></div>
+      <div class="cc"><div class="cc-title">สัดส่วน พื้นที่ลานจอด (Donut)</div><div class="cw" style="height:250px"><canvas id="cmp-donut"></canvas></div></div>
     </div>
-    <div class="cc"><div class="cc-title">ยอดรายวันแยกตาม Outlet (Stacked)</div><div class="cw" style="height:200px"><canvas id="cmp-stack"></canvas></div></div>
+    <div class="cc"><div class="cc-title">ยอดรายวันแยกตาม พื้นที่ลานจอด (Stacked)</div><div class="cw" style="height:200px"><canvas id="cmp-stack"></canvas></div></div>
   </div>
 
   <!-- PAGE: เจาะลึกตามวัน -->
@@ -235,7 +235,7 @@ tr:hover:not(:last-child) td{background:rgba(255,255,255,.03);}
       <div id="day-detail-cards" style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:4px"></div>
     </div>
     <div class="r2b">
-      <div class="cc"><div class="cc-title">เงินสด VS QR รายวัน (ทั้งเดือน)</div><div class="cw" style="height:220px"><canvas id="daily-cashqr"></canvas></div></div>
+      <div class="cc"><div class="cc-title">เงินสด และ QR รายวัน (ทั้งเดือน)</div><div class="cw" style="height:220px"><canvas id="daily-cashqr"></canvas></div></div>
       <div class="cc"><div class="cc-title">Top 10 วันยอดรวมสูงสุด</div><div class="cw" style="height:220px"><canvas id="daily-top10"></canvas></div></div>
     </div>
     <div class="cc"><div class="cc-title">ตารางรายวันทั้งหมด</div><div class="tw" style="max-height:260px"><table><thead><tr><th>วันที่</th><th>CW</th><th>Outlet 1</th><th>Outlet 2-3</th><th>Outlet 4</th><th>Outlet 5</th><th>Outlet 5/1</th><th>Outlet 6</th><th>SW</th><th>รวมใจ</th><th>Cosmo</th><th>รวม</th><th>เงินสด</th><th>QR</th></tr></thead><tbody id="daily-tbl"></tbody></table></div></div>
@@ -243,23 +243,23 @@ tr:hover:not(:last-child) td{background:rgba(255,255,255,.03);}
 
   <!-- PAGE: เงินสด VS QR -->
   <div class="page" id="page-cashqr">
-    <div class="page-header"><div class="page-title">💳 เงินสด VS QR</div><div class="page-sub">วิเคราะห์สัดส่วนการรับชำระเงิน</div></div>
+    <div class="page-header"><div class="page-title">💳 เงินสด และ QR</div><div class="page-sub">วิเคราะห์สัดส่วนการรับชำระเงิน</div></div>
     <div class="big-cashqr">
       <div class="bcq-card" style="border-left:4px solid var(--accent1)"><div class="bcq-label">💵 ยอดรับเงินสดรวม</div><div class="bcq-val cash" id="bcq-cash">0</div><div style="font-size:13px;color:var(--muted)">บาท</div><div style="margin-top:10px;font-size:12px;color:var(--muted)">สัดส่วน <span id="bcq-cash-pct" style="color:var(--accent1);font-weight:700">0%</span> ของยอดรวมทั้งหมด</div></div>
       <div class="bcq-card" style="border-left:4px solid var(--green)"><div class="bcq-label">📱 ยอดรับ QR รวม</div><div class="bcq-val qr" id="bcq-qr">0</div><div style="font-size:13px;color:var(--muted)">บาท</div><div style="margin-top:10px;font-size:12px;color:var(--muted)">สัดส่วน <span id="bcq-qr-pct" style="color:var(--green);font-weight:700">0%</span> ของยอดรวมทั้งหมด</div></div>
     </div>
     <div class="r2">
-      <div class="cc"><div class="cc-title">เงินสด VS QR รายวัน</div><div class="cw" style="height:220px"><canvas id="cq-daily"></canvas></div></div>
-      <div class="cc"><div class="cc-title">สัดส่วนเงินสด VS QR แต่ละ Outlet</div><div class="cw" style="height:220px"><canvas id="cq-outlet"></canvas></div></div>
+      <div class="cc"><div class="cc-title">เงินสด และ QR รายวัน</div><div class="cw" style="height:220px"><canvas id="cq-daily"></canvas></div></div>
+      <div class="cc"><div class="cc-title">สัดส่วนเงินสด และ QR แต่ละ พื้นที่ลานจอด</div><div class="cw" style="height:220px"><canvas id="cq-outlet"></canvas></div></div>
     </div>
-    <div class="cc"><div class="cc-title">สัดส่วนเงินสด VS QR (Pie)</div><div style="display:flex;align-items:center;justify-content:center;gap:40px;padding:10px"><div style="width:180px;height:180px;position:relative"><canvas id="cq-pie"></canvas></div><div id="cq-pie-legend" style="display:flex;flex-direction:column;gap:8px"></div></div></div>
+    <div class="cc"><div class="cc-title">สัดส่วนเงินสด และ QR (Pie)</div><div style="display:flex;align-items:center;justify-content:center;gap:40px;padding:10px"><div style="width:180px;height:180px;position:relative"><canvas id="cq-pie"></canvas></div><div id="cq-pie-legend" style="display:flex;flex-direction:column;gap:8px"></div></div></div>
   </div>
 
   <!-- PAGE: รายงานสรุป -->
   <div class="page" id="page-report">
     <div class="page-header"><div class="page-title">📋 รายงานสรุป</div><div class="page-sub">สรุปข้อมูลรายรับทั้งหมดประจำเดือน</div></div>
     <div class="report-grid" id="report-grid"></div>
-    <div class="cc"><div class="cc-title">Trend เงินสด VS QR ตลอดเดือน</div><div class="cw" style="height:180px"><canvas id="rpt-trend"></canvas></div></div>
+    <div class="cc"><div class="cc-title">Trend เงินสด และ QR ตลอดเดือน</div><div class="cw" style="height:180px"><canvas id="rpt-trend"></canvas></div></div>
   </div>
 
 </div><!-- end main -->
